@@ -1,4 +1,4 @@
-package com.mokshagna.abhiroop.roomwordssample;
+package com.mokshagna.abhiroop.WhatToWear;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
@@ -15,7 +15,7 @@ public interface WordDao {
     void insert(Word word);
     @Query("DELETE FROM word_table")
     void deleteAll();
-    @Query("SELECT * FROM word_table ORDER BY word ASC")
+    @Query("SELECT * FROM word_table")
     LiveData<List<Word>> getAllWords();
     @Query("SELECT * from word_table LIMIT 1")
     Word[] getAnyWord();

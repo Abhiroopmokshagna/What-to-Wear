@@ -1,4 +1,4 @@
-package com.mokshagna.abhiroop.roomwordssample;
+package com.mokshagna.abhiroop.WhatToWear;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -26,7 +26,7 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
     public void onBindViewHolder(WordViewHolder holder, int position) {
         if (mWords != null) {
             Word current = mWords.get(position);
-            holder.wordItemView.setText(current.getWord());
+            holder.wordItemView.setText(current.getDay()+":\n"+current.getWord());
         } else {
             // Covers the case of data not being ready yet.
             holder.wordItemView.setText("No Word");

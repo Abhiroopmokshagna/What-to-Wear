@@ -1,4 +1,4 @@
-package com.mokshagna.abhiroop.roomwordssample;
+package com.mokshagna.abhiroop.WhatToWear;
 
 import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Database;
@@ -17,7 +17,7 @@ public abstract class WordRoomDatabase extends RoomDatabase {
         if(INSTANCE==null){
             synchronized(WordRoomDatabase.class){
                 if(INSTANCE==null){
-                   INSTANCE = Room.databaseBuilder(context.getApplicationContext(),WordRoomDatabase.class,"word_database")
+                   INSTANCE = Room.databaseBuilder(context.getApplicationContext(),WordRoomDatabase.class,"clothes_database")
                            .fallbackToDestructiveMigration()
                            .addCallback(sRoomDatabaseCallback)
                            .build();
@@ -39,8 +39,8 @@ public abstract class WordRoomDatabase extends RoomDatabase {
     private static class PopulateDbAsync extends AsyncTask<Void, Void, Void> {
 
         private final WordDao mDao;
-        String[] words = new String[20]; //= {"dolphin", "crocodile", "cobra"};
-
+        String[] words = new String[7]; //= {"dolphin", "crocodile", "cobra"};
+        String[] days = new String[7];//= {"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
         PopulateDbAsync(WordRoomDatabase db) {
             mDao = db.wordDao();
         }
@@ -51,12 +51,12 @@ public abstract class WordRoomDatabase extends RoomDatabase {
             // Not needed if you only populate the database
             // when it is first created
             //mDao.deleteAll();
-            if(mDao.getAnyWord().length<1) {
-                for (int i = 0; i <= words.length - 1; i++) {
-                    Word word = new Word(words[i]);
-                    mDao.insert(word);
-                }
-            }
+//            if(mDao.getAnyWord().length<1) {
+//                for (int i = 0; i <= words.length - 1; i++) {
+//                    Word word = new Word(words[i],days[i]);
+//                    mDao.insert(word);
+//                }
+//            }
             return null;
         }
     }

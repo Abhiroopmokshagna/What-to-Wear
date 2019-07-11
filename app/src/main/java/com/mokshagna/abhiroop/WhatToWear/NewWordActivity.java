@@ -1,4 +1,4 @@
-package com.mokshagna.abhiroop.roomwordssample;
+package com.mokshagna.abhiroop.WhatToWear;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -11,15 +11,16 @@ import android.widget.EditText;
 public class NewWordActivity extends AppCompatActivity {
     public static final String EXTRA_REPLY =
             "com.example.android.roomwordssample.REPLY";
-
-    private EditText mEditWordView;
+    public static final String EXTRA_DAY =
+            "com.example.android.roomwordssample.DAY";
+    private EditText mEditWordView,mEditDayView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_word);
         mEditWordView = findViewById(R.id.edit_word);
-
+        mEditDayView = findViewById(R.id.edit_day);
         final Button button = findViewById(R.id.button_save);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -28,7 +29,9 @@ public class NewWordActivity extends AppCompatActivity {
                     setResult(RESULT_CANCELED, replyIntent);
                 } else {
                     String word = mEditWordView.getText().toString();
+                    String day = mEditDayView.getText().toString();
                     replyIntent.putExtra(EXTRA_REPLY, word);
+                    replyIntent.putExtra(EXTRA_DAY,day);
                     setResult(RESULT_OK, replyIntent);
                 }
                 finish();

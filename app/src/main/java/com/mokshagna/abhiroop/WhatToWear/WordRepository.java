@@ -1,4 +1,4 @@
-package com.mokshagna.abhiroop.roomwordssample;
+package com.mokshagna.abhiroop.WhatToWear;
 
 import android.app.Application;
 import android.arch.lifecycle.LiveData;

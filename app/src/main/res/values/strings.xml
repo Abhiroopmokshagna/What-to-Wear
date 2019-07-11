@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">RoomWordsSample</string>
+    <string name="app_name">What to Wear?</string>
     <string name="action_settings">Settings</string>
-    <string name="hint_word">Word...</string>
+    <string name="hint_word">What you want to wear?</string>
+    <string name="hint_day">On which day?</string>
     <string name="button_save">Save</string>
-    <string name="empty_not_saved">Word not saved because it is empty.</string>
+    <string name="empty_not_saved">Data not saved because it is empty.</string>
     <string name="clear_all_data">Clear data</string>
 </resources>
